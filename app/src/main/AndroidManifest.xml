@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zhhl.concern">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.zhhl.concern.app.App"
+
+        android:allowBackup="true"  android:usesCleartextTraffic="true"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".mvp.view.activities.SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zhhl.concern.mvp.view.activities.MainActivity" android:launchMode="singleTask"
+            android:theme="@style/ImageTranslucentTheme">
+            <intent-filter>
+                <action android:name="com.zhhl.activity.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name="com.zhhl.concern.mvp.view.activities.ConcernApplicationActivity"
+            android:label="人员关注申请"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="com.zhhl.activity.ConcernRequest" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zhhl.concern.mvp.view.activities.PendingApprovalActivity"
+            android:label="待审批">
+            <intent-filter>
+                <action android:name="com.zhhl.activity.PendingApproval" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zhhl.concern.mvp.view.activities.ApprovalActivity"
+            android:label="事项审批"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.zhhl.activity.Approval" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zhhl.concern.mvp.view.activities.ConcernPeopleActivity"
+            android:label="人员关注">
+            <intent-filter>
+                <action android:name="com.zhhl.activity.ConcernList" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zhhl.concern.mvp.view.activities.TrajectoryAnalysis"
+            android:label="轨迹分析">
+            <intent-filter>
+                <action android:name="com.zhhl.activity.TrajectoryAmalysis" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zhhl.concern.mvp.view.activities.TrajectoryAnalysisListActivity"
+            android:label="轨迹分析">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="com.zhhl.activity.TrajectoryPeopleList" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zhhl.concern.mvp.view.activities.LeadPushActivity"
+            android:label="线索推送">
+            <intent-filter>
+                <action android:name="com.zhhl.activity.LeadPush" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zhhl.concern.mvp.view.activities.LoginActivity"
+            android:theme="@style/AppThemeNoActionBar">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+            <!--<intent-filter>-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity
+            android:name="com.zhhl.concern.mvp.view.activities.TrajectoryAnalysisCar"
+            android:label="车辆轨迹"
+            android:theme="@style/AppTheme">
+
+        </activity>
+        <activity
+            android:name=".mvp.view.activities.PersonTrajectoryAnalysisActivity"
+            android:theme="@style/AppThemeNoActionBar">
+            <intent-filter>
+                <action android:name="com.zhhl.activity.Trajectory" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".mvp.view.activities.TimeSelectActivity"
+            android:theme="@style/MyTranslucentTheme" />
+    </application>
+
+</manifest>

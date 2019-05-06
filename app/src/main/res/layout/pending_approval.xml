@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/centerView"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="20dp"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:id="@+id/mPendingApprovalLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/centerView"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="16sp"
+                android:id="@+id/mPendingApprovalTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="待审批" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/mPendingApprovalBar"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#638be9">
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mApprovalLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/centerView"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mApprovalTv"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="已审批" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/mApprovalBar"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#FFFFFF">
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:background="@color/colorCardBg"
+        android:id="@+id/mConcernApplicationContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

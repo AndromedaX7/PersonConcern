@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.zhhl.concern"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 5
+        versionName "beta-1.05.0430"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField("boolean","useTitle","false")
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // ===========  dagger ==========================
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.18'
+    implementation 'com.google.dagger:dagger:2.18'
+    // ===========  g s o n ==========================
+    implementation 'com.google.code.gson:gson:2.8.5'
+    // ===========  retrofit2  ==========================
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    implementation 'com.squareup.retrofit2:retrofit-mock:2.2.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.2'
+    // ===========  rx ==========================
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.4'
+    //okHttp3
+    //    implementation 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+    //    implementation 'com.facebook.stetho:stetho:1.3.1'
+    //    stream
+    implementation 'com.annimon:stream:1.1.3'
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:4.7.1'
+    //butterKnafe
+    implementation 'com.jakewharton:butterknife-annotations:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.android.support:palette-v7:28.0.0'
+    implementation files('libs/uaacapi.jar')
+    implementation(name: "wt", ext: "aar")
+    implementation 'com.squareup.okhttp3:okhttp:3.13.1'
+    implementation files('libs/vpnapi.jar')
+}
