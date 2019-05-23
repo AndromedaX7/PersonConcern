@@ -51,7 +51,7 @@ public class ApprovalPresenter extends BasePresenter<ApprovalContract.Model, App
                 "  \"requestid\": \"" + requestid + "\",\n" +
                 "  \"approvePerson\": \"" + approvePerson + "\",\n" +
                 "  \"approveOpinion\": \"" + approveOpinion + "\"\n" +
-                "}", agree ? Api.approvalArgee : Api.refused, gson.toJson(createApproveRequest));
+                "}","3", gson.toJson(createApproveRequest));
 
     }
 

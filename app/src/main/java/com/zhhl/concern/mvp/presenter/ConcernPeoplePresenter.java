@@ -51,7 +51,7 @@ public class ConcernPeoplePresenter extends BasePresenter<ConcernPeopleContract.
         }
 
 //        TODO :Y
-        App.app().getLogReport().log("{\"applyPerson\":\"" + App.app().getUserInfo().getUserInfo().getCode() + "\"}", Api.myApproval, gson.toJson(myApprove));
+        App.app().getLogReport().log("{\"applyPerson\":\"" + App.app().getUserInfo().getUserInfo().getCode() + "\"}", "1", gson.toJson(myApprove));
     }
 
     public void viewApproval(String o) {

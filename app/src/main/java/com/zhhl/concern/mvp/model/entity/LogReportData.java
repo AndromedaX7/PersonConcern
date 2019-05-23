@@ -2,38 +2,18 @@ package com.zhhl.concern.mvp.model.entity;
 
 public class LogReportData {
 
-    private String cardNo;
-    private String formatParam;
+    private String destIp;
     private String logType;
+    private String formatParam;
     private String module;
-    private String params;
-    private String policeId;
-    private String requestId;
-    private String response;
-    private String responseTime;
     private String sessionId;
-    private String sn;
-    private String sourceIp;
-    private String sourcePort;
 
-    public LogReportData() {
+    public String getDestIp() {
+        return destIp;
     }
 
-    public String getCardNo() {
-
-        return cardNo;
-    }
-
-    public void setCardNo(String cardNo) {
-        this.cardNo = cardNo;
-    }
-
-    public String getFormatParam() {
-        return formatParam;
-    }
-
-    public void setFormatParam(String formatParam) {
-        this.formatParam = formatParam;
+    public void setDestIp(String destIp) {
+        this.destIp = destIp;
     }
 
     public String getLogType() {
@@ -44,52 +24,20 @@ public class LogReportData {
         this.logType = logType;
     }
 
+    public String getFormatParam() {
+        return formatParam;
+    }
+
+    public void setFormatParam(String formatParam) {
+        this.formatParam = formatParam;
+    }
+
     public String getModule() {
         return module;
     }
 
     public void setModule(String module) {
         this.module = module;
-    }
-
-    public String getParams() {
-        return params;
-    }
-
-    public void setParams(String params) {
-        this.params = params;
-    }
-
-    public String getPoliceId() {
-        return policeId;
-    }
-
-    public void setPoliceId(String policeId) {
-        this.policeId = policeId;
-    }
-
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    public String getResponse() {
-        return response;
-    }
-
-    public void setResponse(String response) {
-        this.response = response;
-    }
-
-    public String getResponseTime() {
-        return responseTime;
-    }
-
-    public void setResponseTime(String responseTime) {
-        this.responseTime = responseTime;
     }
 
     public String getSessionId() {
@@ -100,28 +48,52 @@ public class LogReportData {
         this.sessionId = sessionId;
     }
 
-    public String getSn() {
-        return sn;
+    public String getSource() {
+        return source;
     }
 
-    public void setSn(String sn) {
-        this.sn = sn;
+    public void setSource(String source) {
+        this.source = source;
     }
 
-    public String getSourceIp() {
-        return sourceIp;
+    public String getCardNo() {
+        return cardNo;
     }
 
-    public void setSourceIp(String sourceIp) {
-        this.sourceIp = sourceIp;
+    public void setCardNo(String cardNo) {
+        this.cardNo = cardNo;
     }
 
-    public String getSourcePort() {
-        return sourcePort;
+    public String getResult() {
+        return result;
     }
 
-    public void setSourcePort(String sourcePort) {
-        this.sourcePort = sourcePort;
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public String getResponseType() {
+        return responseType;
+    }
+
+    public void setResponseType(String responseType) {
+        this.responseType = responseType;
+    }
+
+    public String getDestPort() {
+        return destPort;
+    }
+
+    public void setDestPort(String destPort) {
+        this.destPort = destPort;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
     }
 
     public String getTerminalIp() {
@@ -132,33 +104,42 @@ public class LogReportData {
         this.terminalIp = terminalIp;
     }
 
-    public String getUrl() {
-        return url;
+    public String getTime() {
+        return time;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public LogReportData(String cardNo, String formatParam, String logType, String module, String params, String policeId, String requestId, String response, String responseTime, String sessionId, String sn, String sourceIp, String sourcePort, String terminalIp, String url) {
+    public LogReportData() {
+    }
 
-        this.cardNo = cardNo;
-        this.formatParam = formatParam;
+    public LogReportData(String destIp, String logType, String formatParam, String module, String sessionId, String source, String cardNo, String result, String responseType, String destPort, String response, String terminalIp, String time) {
+        this.destIp = destIp;
         this.logType = logType;
+        this.formatParam = formatParam;
         this.module = module;
-        this.params = params;
-        this.policeId = policeId;
-        this.requestId = requestId;
-        this.response = response;
-        this.responseTime = responseTime;
         this.sessionId = sessionId;
-        this.sn = sn;
-        this.sourceIp = sourceIp;
-        this.sourcePort = sourcePort;
+        this.source = source;
+        this.cardNo = cardNo;
+        this.result = result;
+        this.responseType = responseType;
+        this.destPort = destPort;
+        this.response = response;
         this.terminalIp = terminalIp;
-        this.url = url;
+        this.time = time;
     }
 
+    private String source;
+    private String cardNo;
+    private String result;
+    private String responseType;;
+
+    private String destPort;
+    private String response;
     private String terminalIp;
-    private String url;
+    private String time;
+
+
 }

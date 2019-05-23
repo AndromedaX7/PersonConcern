@@ -62,7 +62,7 @@ public class LeadPushPresenter extends BasePresenter<LeadPushContract.Model, Lea
 
             }
         }
-        App.app().getLogReport().log("{\"applyPerson\":\"" + App.app().getUserInfo().getUserInfo().getCode() + "\"}", Api.myApproval, gson.toJson(myApprove));
+        App.app().getLogReport().log("{\"applyPerson\":\"" + App.app().getUserInfo().getUserInfo().getCode() + "\"}", "1", gson.toJson(myApprove));
     }
 
     private void viewApproval(ViewApprove viewApprove) {//

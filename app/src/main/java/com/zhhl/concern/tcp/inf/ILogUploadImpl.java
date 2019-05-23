@@ -21,9 +21,20 @@ public class ILogUploadImpl {
         this.iLogUpload = HttpTools.build(ILogUpload.class, "http://192.168.20.228:7103/");//"http://192.168.20.228:7122/"
         this.vpnApi50 = vpnApi50;
     }
+//    logType
+//    formatParam
+//    sessionId
+//    source
+//    module
+//    response
+//    cardNo
+//    responseType
+//    result
+//    time
+//    terminalIp
 
 
-    public void log(String params, String url, String response) {
+    public void log(String params, String logType, String response) {
         LoginBean.UserInfoBean userInfo = App.app().getUserInfo().getUserInfo();
         Log.e("log: ", "pid :" + Process.myPid());
         /**
@@ -43,31 +54,36 @@ public class ILogUploadImpl {
          */
         if (App.app().getUserInfo() != null)
             if (userInfo != null)//java.security.NoSuchAlgorithmException: The BC provider no longer provides an implementation for CertificateFactory.X.509
-                upload(userInfo.getCode(), ""/*vpnApi50.getDefaultCertSN()*/, userInfo.getIdentifier(),
-                        "12", params, url, MacUtils.getIPAddress(App.app()),
-                        "重点人员关注", "", response, "500", "192.168.20.228",
-                        "7103")
+
+
+                upload("192.168.20.228",logType,params,"重点人员关注",System.currentTimeMillis()+"-"+userInfo.getCode(),
+                       "108",userInfo.getIdentifier() ,"成功","1","7103",response,MacUtils.getIPAddress(App.app()),String .valueOf(System.currentTimeMillis()))
+//                upload(userInfo.getCode(), ""/*vpnApi50.getDefaultCertSN()*/, userInfo.getIdentifier(),
+//                        "12", params, url, MacUtils.getIPAddress(App.app()),
+//                        "", "", response, "500", "192.168.20.228",
+//                        "7103")
                         .observeOn(Schedulers.io())
                         .subscribeOn(Schedulers.computation())
                         .subscribe(this::logres, this::err, this::complete)
                         .isDisposed();
     }
 
-    Observable<Object> upload(String policeId,
-                              String sn,
-                              String cardNo,
+    Observable<Object> upload(String destIp,
                               String logType,
-                              String params,
-                              String url,
-                              String terminalIp,
-                              String module,
                               String formatParam,
+                              String module,
+                              String sessionId,
+                              String source,
+                              String cardNo,
+                              String result,
+                              String responseType,
+                              String destPort,
                               String response,
-                              String responseTime,
-                              String sourceIp,
-                              String sourcePort
+                              String terminalIp,
+                              String time
     ) {
-        LogReportData logReportData = new LogReportData(cardNo, formatParam, logType, module, params, policeId, System.currentTimeMillis() + "-" + policeId, response, responseTime, System.currentTimeMillis() + "-" + policeId, sn, sourceIp, sourcePort, terminalIp, url);
+        //String destIp, String logType, String formatParam, String module, String sessionId, String source, String cardNo, String result, String responseType, String destPort, String response, String terminalIp, String terminalIp
+        LogReportData logReportData = new LogReportData(destIp, logType, formatParam, module, sessionId, source, cardNo, result, responseType, destPort, response, terminalIp, time);
         return iLogUpload.upload((logReportData));
     }
 
