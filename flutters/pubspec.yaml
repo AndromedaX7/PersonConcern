@@ -41,6 +41,17 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+
+  assets:
+    - images/banner.png
+    - images/icon_guiji.png
+    - images/icon_shenqing.png
+    - images/icon_list.png
+    - images/icon_shenpi.png
+    - images/icon_tuisong.png
+    - images/logo.png
+    - images/user_bg.png
+
   # To add Flutter specific assets to your application, add an assets section, 
   # like this:
   # assets:
