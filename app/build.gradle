@@ -71,4 +71,5 @@ dependencies {
     implementation(name: "wt", ext: "aar")
     implementation 'com.squareup.okhttp3:okhttp:3.13.1'
     implementation files('libs/vpnapi.jar')
+    implementation project(path: ':flutter')
 }

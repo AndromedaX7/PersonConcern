@@ -9,13 +9,23 @@
     <application
         android:name="com.zhhl.concern.app.App"
 
-        android:allowBackup="true"  android:usesCleartextTraffic="true"
+        android:allowBackup="true"
         android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity-alias
+            android:name="a"
+            android:targetActivity="io.flutter.facade.MainActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity-alias>
+
         <activity
             android:name=".mvp.view.activities.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -26,7 +36,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.zhhl.concern.mvp.view.activities.MainActivity" android:launchMode="singleTask"
+            android:name="com.zhhl.concern.mvp.view.activities.MainActivity"
+            android:launchMode="singleTask"
             android:theme="@style/ImageTranslucentTheme">
             <intent-filter>
                 <action android:name="com.zhhl.activity.MainActivity" />

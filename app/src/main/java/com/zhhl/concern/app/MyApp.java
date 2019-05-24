@@ -17,10 +17,12 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.flutter.app.FlutterApplication;
+
 /**
  * Created by miao on 2018/5/4.
  */
-public class MyApp extends Application implements Application.ActivityLifecycleCallbacks {
+public class MyApp extends FlutterApplication implements Application.ActivityLifecycleCallbacks {
 
     private List<String> masks = new ArrayList<>();
     public AppComponent appComponent;
