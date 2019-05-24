@@ -9,7 +9,7 @@ android {
         versionCode 5
         versionName "beta-1.05.0430"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField("boolean","useTitle","false")
+        buildConfigField("boolean", "useTitle", "false")
     }
     buildTypes {
         release {
@@ -27,6 +27,7 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res_'] } }
 }
 
 dependencies {
